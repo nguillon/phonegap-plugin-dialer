@@ -1,6 +1,12 @@
-var phoneDial = {
-    call: function(phoneNumber, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "PhoneDial", "call", [phoneNumber]);
+var phonedial = {
+    callDirect: function(phoneNumber, successCallback, errorCallback) {
+        cordova.exec(
+            successCallback, // success callback function
+            errorCallback, // error callback function
+            'PhoneDial', // mapped to our native Java class called "CalendarPlugin"
+            'callDirect', // with this action name
+            [phoneNumber]
+        ); 
     }
 }
-module.exports = phoneDial;
+module.exports = phonedial;
