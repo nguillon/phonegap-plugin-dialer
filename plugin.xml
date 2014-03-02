@@ -3,14 +3,14 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="net.gullyweb.cordova.phonedial"
       version="0.1.0">
-    <name>Calendar</name>
+    <name>PhoneDial</name>
     <description>Direct Phone Dial for Android</description>
     <license>MIT</license>
     <keywords>phonegap</keywords>
 
 
     <js-module src="www/PhoneDial.js" name="PhoneDial">
-        <clobbers target="window.plugins.phonedial" />
+        <clobbers target="window.phonedial" />
     </js-module>
 
     <!-- android -->

@@ -1,20 +1,6 @@
-
-function PhoneDial() {
-    this.resultCallback = null; // Function
+var phoneDial = {
+    call: function(phoneNumber, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "PhoneDial", "call", [phoneNumber]);
+    }
 }
-PhoneDial.prototype.dial = function(phoneNmber){    
-    cordova.exec(null, null, "PhoneDial", "call", [phoneNmber]);
-}
-cordova.addConstructor(function()  {    
-                       if(!window.plugins)
-                       {
-                       window.plugins = {};
-                       }
-
-                       // shim to work in 1.5 and 1.6
-                       if (!window.Cordova) {
-                       window.Cordova = cordova;
-                       };
-
-                       window.plugins.phoneDial = new PhoneDial();
-                       });
+module.exports = phoneDial;
